@@ -38,9 +38,17 @@ class Song:
 
     def add_to_genre_count(self):
         # update genre count dictionary
-        pass
+        # increment count for this genre, or set to 1 if genre doesn't exist in genre_count
+        if self.genre in Song.genre_count:
+            Song.genre_count[self.genre] += 1
+        else:
+            Song.genre_count[self.genre] = 1
 
 
     def add_to_artists_count(self):
         # update artist count dictionary
-        pass
+        # increment count for this artist, or set to 1 if artist doesn't exist in artists_count
+        if self.artist in Song.artist_count:
+            Song.artist_count[self.artist] += 1
+        else:
+            Song.artist_count[self.artist] = 1
